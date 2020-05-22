@@ -1,0 +1,41 @@
+{
+  "name": "babel_install",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "@babel/preset-typescript"
+    ],
+    "plugins": []
+  },
+  "scripts": {
+    "start": "nodemon --exec ts-node index.ts",
+    "build": "babel src --out-dir ./dist",
+    "test": "jest --watchAll",
+    "doc": "typedoc --out docs lib"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.8.7",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.1",
+    "babel-jest": "^26.0.1",
+    "jest": "^26.0.1",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.2"
+  }
+}
